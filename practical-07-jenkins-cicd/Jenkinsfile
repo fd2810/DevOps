@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                bat 'python -m pip install -r requirements.txt'
+            }
+        }
+        stage('Test') {
+            steps {
+                bat 'python -m pytest test_app.py -v'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deployment stage (can start the app or copy files)'
+            }
+        }
+    }
+}
