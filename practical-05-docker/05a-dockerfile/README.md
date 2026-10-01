@@ -77,7 +77,13 @@ Flask_Project/
 
 ## Step 6: Build the Image
 ```bash
-docker build -t flask-app .
+1. docker build -t flask-app .  //if the command is running from the same folder where the file is there
+for example: 
+C:\Users\Intel\Desktop\College\DevOps\devops-practicals\practical-05-docker\05a-dockerfile>docker build -t flask .
+2. docker build -t flask-app practical-05-docker/05a-dockerfile   // if the command is running from other folder rather then where is the file u should add path instead of '.'
+for example :
+C:\Users\Intel\Desktop\College\DevOps\devops-practicals> docker build -t flask-app practical-05-docker/05a-dockerfile
+
 ```
 
 ## Step 7: Verify Image

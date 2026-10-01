@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DevOps Practicals
 
 This repository contains all DevOps practicals in a clean, student-friendly format.  
@@ -42,3 +43,4 @@ Each practical has its own folder with:
 ---
 
 Made for easy submission and GitHub push.
+
