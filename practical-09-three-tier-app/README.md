@@ -3,11 +3,11 @@
 ## Aim
 Build a Student Management System with three tiers:
 
-| Tier | Technology | Port |
-|------|------------|------|
-| Frontend (Presentation) | React (Vite) | 5173 |
-| Backend (Application) | Flask | 5000 |
-| Database (Data) | PostgreSQL | 5433 (or 5432) |
+| Tier                     | Technology   | Port           |
+|--------------------------|--------------|----------------|
+| Frontend (Presentation)  | React (Vite) | 5173           |
+| Backend (Application)    | Flask | 5000 |
+| Database (Data)          | PostgreSQL   | 5433 (or 5432) |
 
 ---
 

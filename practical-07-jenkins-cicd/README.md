@@ -8,13 +8,13 @@ Set up Jenkins for a Flask application and create a CI/CD pipeline that does:
 
 ## What You Need Installed
 
-| Software | Purpose |
-|----------|---------|
-| JDK 17+ | Required by Jenkins |
-| Jenkins | CI/CD automation |
-| Git | Version control |
+| Software       | Purpose |
+|----------------|---------|
+| JDK 17+        | Required by Jenkins |
+| Jenkins        | CI/CD automation |
+| Git            | Version control |
 | Python + Flask | Application |
-| pytest | Automated testing |
+| pytest         | Automated testing |
 | GitHub account | Remote repository |
 
 ---
@@ -127,7 +127,26 @@ pipeline {
 
 ---
 
-## Part C — Push Project to GitHub
+## Part D — Test the Application Manually
+Open the VS Code terminal.
+1. Create a virtual environment:
+    python -m venv venv
+2. Activate it:
+    venv\Scripts\activate
+3. Install dependencies:
+    pip install -r requirements.txt
+4. Run the test:
+    pytest
+5. You should get:
+    1 passed
+6. Run Flask:
+    python app.py
+7. Open: http://localhost:5000
+8. You should see:
+    Hello from Flask CI/CD!
+---
+
+## Part D — Push Project to GitHub
 
 ```bash
 git init
@@ -140,7 +159,7 @@ git push -u origin main
 
 ---
 
-## Part D — Create Jenkins Pipeline Job
+## Part E — Create Jenkins Pipeline Job
 
 1. Jenkins Dashboard → **New Item**
 2. Name: `Flask-CI-CD`
@@ -155,7 +174,7 @@ git push -u origin main
 
 ---
 
-## Part E — Run the Pipeline
+## Part F — Run the Pipeline
 
 Click **Build Now**.
 
@@ -167,7 +186,7 @@ Watch **Console Output**:
 
 ---
 
-## Part F — (Optional) GitHub Webhook for Automatic Trigger
+## Part G — (Optional) GitHub Webhook for Automatic Trigger
 
 1. In Jenkins job → Configure → Build Triggers → check **GitHub hook trigger for GITScm polling**
 2. In GitHub repo → Settings → Webhooks → Add webhook  

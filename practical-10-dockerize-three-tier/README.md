@@ -240,13 +240,13 @@ docker compose up -d
 
 ## Commands Summary
 
-| Command | Purpose |
-|---------|---------|
-| `docker compose build` | Build images |
-| `docker compose up -d` | Start all services |
-| `docker compose ps` | Status |
+| Command                         | Purpose |
+|---------------------------------|---------|
+| `docker compose build`          | Build images |
+| `docker compose up -d`          | Start all services |
+| `docker compose ps`             | Status |
 | `docker compose logs <service>` | View logs |
-| `docker compose down` | Stop & remove containers |
+| `docker compose down`           | Stop & remove containers |
 
 ---
 
