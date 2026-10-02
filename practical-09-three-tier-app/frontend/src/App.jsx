@@ -18,7 +18,8 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Student Management System</h1>
+      <h1 >Student Management System</h1>
+
       <table>
         <thead>
           <tr>
@@ -28,6 +29,7 @@ function App() {
             <th>Course</th>
           </tr>
         </thead>
+
         <tbody>
           {students.map((student) => (
             <tr key={student.id}>

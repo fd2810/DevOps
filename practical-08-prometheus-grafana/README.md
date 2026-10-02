@@ -5,13 +5,13 @@ Monitor a Flask application using Prometheus + Grafana + Windows Exporter.
 
 ## Software & Ports
 
-| Software | Purpose | Port |
-|----------|---------|------|
-| Flask App | Application | 5000 |
-| Prometheus Client | App metrics | 8000 |
-| Prometheus | Collect metrics | 9090 |
-| Windows Exporter | CPU/Memory | 9182 |
-| Grafana | Dashboards | 3000 |
+| Software          | Purpose         | Port |
+|-------------------|-----------------|------|
+| Flask App         | Application     | 5000 |
+| Prometheus Client | App metrics     | 8000 |
+| Prometheus        | Collect metrics | 9090 |
+| Windows Exporter  | CPU/Memory      | 9182 |
+| Grafana           | Dashboards      | 3000 |
 
 ---
 
@@ -162,12 +162,12 @@ curl http://localhost:5000/
 
 ## Running Everything (4 processes)
 
-| Process | Command |
-|---------|---------|
-| Flask | `python app.py` |
-| Prometheus | `prometheus.exe --config.file=prometheus.yml` |
+| Process          | Command |
+|------------------|---------|
+| Flask            | `python app.py` |
+| Prometheus       | `prometheus.exe --config.file=prometheus.yml` |
 | Windows Exporter | Runs as service |
-| Grafana | Runs as service |
+| Grafana          | Runs as service |
 
 ---
 

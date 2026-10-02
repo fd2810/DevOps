@@ -1,35 +1,32 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
-  margin: 0;
-  padding: 40px;
+font-family: Arial, sans-serif;
+background:  #085f81;
+margin: 0;
+padding: 40px;
 }
-
 .container {
-  max-width: 900px;
-  margin: auto;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
+max-width: 900px;
+margin: auto;
+background: rgb(226, 226, 230);
+padding: 30px;
+border-radius: 10px;
 }
-
 h1 {
-  text-align: center;
+text-align: center;
+color: #000;
 }
-
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 25px;
+width: 100%;
+border-collapse: collapse;
+margin-top: 25px;
 }
-
 th,
 td {
-  border: 1px solid #ccc;
-  padding: 12px;
-  text-align: left;
+border: 1px solid #000208;
+padding: 12px;
+text-align: left;
+color: #000;
 }
-
 th {
-  background: #eeeeee;
+background:  #085f81;
 }

@@ -10,3 +10,4 @@ VALUES
 ('Rahul', 'rahul@gmail.com', 'BCA'),
 ('Priya', 'priya@gmail.com', 'BSc CS'),
 ('Amit', 'amit@gmail.com', 'BCA');
+

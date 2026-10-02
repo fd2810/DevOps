@@ -1,20 +1,20 @@
 # Practical 9: 3-Tier Architecture (React + Flask + PostgreSQL)
 
 ## Aim
-Build a Student Management System with three tiers:
+Build a **Student Management System** with three tiers:
 
-| Tier                     | Technology   | Port           |
-|--------------------------|--------------|----------------|
-| Frontend (Presentation)  | React (Vite) | 5173           |
-| Backend (Application)    | Flask | 5000 |
-| Database (Data)          | PostgreSQL   | 5433 (or 5432) |
+| Tier | Technology | Port |
+|------|------------|------|
+| Frontend (Presentation) | React (Vite) | 5173 |
+| Backend (Application) | Flask | 5000 |
+| Database (Data) | PostgreSQL | 5432 |
 
 ---
 
 ## Architecture
 ```
 React Frontend  ──HTTP──►  Flask Backend  ──SQL──►  PostgreSQL
-   :5173                      :5000                    :5433
+   :5173                      :5000                    :5432
 ```
 
 ---
@@ -24,11 +24,6 @@ React Frontend  ──HTTP──►  Flask Backend  ──SQL──►  PostgreS
 python --version
 node --version
 npm --version
-```
-
-PostgreSQL (adjust path if needed):
-```bash
-"C:\Program Files\PostgreSQL\18\bin\psql.exe" --version
 ```
 
 ---
@@ -50,7 +45,7 @@ mkdir frontend
 2. Servers → PostgreSQL → Databases → Create → Database
 3. Name: `studentdb2` → Save
 
-### Create table (Query Tool)
+### Create table (Query Tool) — or use the file `studentdb2.sql`
 ```sql
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
@@ -77,20 +72,23 @@ VALUES
 cd backend
 python -m venv venv
 venv\Scripts\activate
-pip install flask flask-cors "psycopg[binary]"
+pip install -r requirements.txt
 ```
 
-### Create `app.py`
-(See `backend/app.py` in this folder)
+### `backend/app.py`
+(Already provided — uses port **5432** and password **123456**)
 
-**Important:** Change the password in `DB_CONFIG` to your real PostgreSQL password.
+> **Important:** If your PostgreSQL password is different, change this line in `app.py`:
+> ```python
+> "password": "123456"
+> ```
 
 ### Run backend
 ```bash
 python app.py
 ```
 
-Test:
+### Test
 - http://127.0.0.1:5000/ → `{"message": "Student Management API is running"}`
 - http://127.0.0.1:5000/students → list of students
 
@@ -98,7 +96,7 @@ Test:
 
 ## Step 5: React Frontend
 
-Open **new** terminal:
+Open a **new** terminal:
 ```bash
 cd %USERPROFILE%\Desktop\three-tier-student-app
 npm create vite@latest frontend -- --template react
@@ -107,25 +105,45 @@ npm install
 npm install axios
 ```
 
-### Replace `src/App.jsx`
-(See `frontend/src/App.jsx`)
-
-### Replace `src/App.css`
-(See `frontend/src/App.css`)
+### Replace these files with the ones in this folder:
+- `src/App.jsx`
+- `src/App.css`
+- `src/main.jsx` (optional)
 
 ### Run frontend
 ```bash
 npm run dev
 ```
 
-Open the URL shown (usually http://localhost:5173)
+Open the URL shown (usually **http://localhost:5173**)
 
-You should see the Student Management System table with data coming from PostgreSQL via Flask.
+You should see the **Student Management System** table with data coming from PostgreSQL via Flask.
 
 ---
 
 ## Expected Result
-Data flows:  
-**React → Flask API → PostgreSQL → Flask → React**
-
+```
+React → Flask API → PostgreSQL → Flask → React
+```
 Students are **not hard-coded** in React.
+
+---
+
+## Files in this folder
+```
+practical-09-three-tier-app/
+├── README.md
+├── studentdb2.sql
+├── backend/
+│   ├── app.py
+│   └── requirements.txt
+└── frontend/
+    ├── package.json
+    ├── vite.config.js
+    ├── index.html
+    └── src/
+        ├── App.jsx
+        ├── App.css
+        ├── main.jsx
+        └── index.css
+```
